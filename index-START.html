@@ -9,6 +9,7 @@
 <input type="range" id="range" min="0" max="100" />
 <script>
 
+const bar2 = document.querySelector("#range");
 const canvas = document.querySelector("#draw");
 const ctx = canvas.getContext('2d');
 canvas.width = window.innerWidth;
@@ -54,7 +55,11 @@ canvas.addEventListener("mouseup", (e) => {
 	}
 );
 canvas.addEventListener("mouseout", () => isDrawing = false);
-
+bar2.addEventListener("input", () => {
+	console.log(this);
+	ctx.lineWidth = bar.value;
+	}
+);
 
 </script>
 
